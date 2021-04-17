@@ -10,7 +10,7 @@ namespace RegularExpressions
             Console.WriteLine("Welcome to user Registration");
             string pattern = "^[A-Z]{1}[a-z]{2,}$"; //Pattern for characters
 
-            //Pattern for  pin code
+            //Pattern for  last name
 
             string[] inputs1 = { "Aaa", "Aaaa", "aA11", "bAc", "1A1aab", "1aAb23a" };
             
