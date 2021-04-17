@@ -8,11 +8,11 @@ namespace RegularExpressions
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to user Registration");
-            string pattern = "^[A-Z]{1}[a-z]{2,}$"; //Pattern for characters
+            string pattern = "^[0-9]{2}[ ]*[0-9]{10}$"; //Pattern for characters
 
-            //Pattern for  last name
+            //Pattern for  Phone number
 
-            string[] inputs1 = { "Aaa", "Aaaa", "aA11", "bAc", "1A1aab", "1aAb23a" };
+            string[] inputs1 = { "91 8978674532", "987654320981", "9876543212431", "91 8907562431", "990088776655", "990088awek678543" };
             
 
             Program p = new Program();
