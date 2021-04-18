@@ -6,49 +6,46 @@ namespace RegularExpressions
     class Program
     {
         static void Main(string[] args)
-        {
-            Console.WriteLine("Welcome to user Registration");
-            string pattern = "^[0-9]{2}[ ]*[0-9]{10}$"; //Pattern for characters
+        {      
 
-            //Pattern for  Phone number
+            Console.WriteLine("Welcome To User Registration");
+            Console.WriteLine();
+            string Pattern = "^([a-z]{3,})([.]{0,1}[a-z]*)@([a-z]{2}).([a-z]{2})([.]{1}[a-z]{2}){0,1}$"; //pattern using for email.
 
-            string[] inputs1 = { "91 8978674532", "987654320981", "9876543212431", "91 8907562431", "990088776655", "990088awek678543" };
-            
-
-            Program p = new Program();
-            p.ValidateChracters(inputs1, pattern);
-           
-
+            Program p = new Program(); // create object
+            p.ValidName(Pattern);
+            Console.WriteLine();
+            Console.Read();
         }
 
-        public void IterateLoop(string[] arr, Regex regex)
+        public void ValidName(string Pattern) //method to validate string
         {
-            for (int i = 0; i < arr.Length; i++)
+            Console.WriteLine("Validation Of The Email");
+            Regex regex = new Regex(Pattern);
+            IterateLoop(regex);  //calling method
+        }
+
+        public void IterateLoop(Regex regex)
+        {
+            int i = 0; 
+            while (i != 1)
             {
-                bool result = regex.IsMatch(arr[i]);
-                if (result)
+                Console.WriteLine("Enter Email");
+                string email = Console.ReadLine();
+                bool result = regex.IsMatch(email);  //call the IsMatch metod to determine whether a match is present
+
+                if (result == true)  ////check result is true or not using if and hence using bool
                 {
-                    Console.WriteLine(arr[i] + "------>" + "Valid");
+                    Console.WriteLine("Valid email");
+                    i = 1;
                 }
                 else
                 {
-                    Console.WriteLine(arr[i] + "------>" + "Invalid");
-
+                    Console.WriteLine("Enter email in this format : abc.xyz@bl.co.in");
                 }
+
             }
         }
-
-
-        public void ValidateChracters(string[] arr, string pattern) //method to validate characters
-        {
-            Console.WriteLine("Validating for characters:");
-            Regex regex1 = new Regex(pattern);
-            IterateLoop(arr, regex1);
-
-        }
-       
-
     }
 }
-
 
