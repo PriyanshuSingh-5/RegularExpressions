@@ -6,13 +6,13 @@ namespace RegularExpressions
     class Program
     {
         static void Main(string[] args)
-        {     //Entery point 
+        {      
 
             Console.WriteLine("-------Welcome To User Registration--------");
             Console.WriteLine();
-            string pattern = "[0-9]{1}"; //pattern for atleast 1numeric password 
+            string pattern = "[@#$%^&+=]{1}"; //pattern for exactly 1special char. 
 
-            Program p = new Program(); // create object
+            Program p = new Program(); 
             p.ValidPass(pattern);
             Console.WriteLine();
             Console.Read();
@@ -28,7 +28,7 @@ namespace RegularExpressions
 
         public void IterateLoop(Regex regex)
         {
-            int i = 0; //initialize i value
+            int i = 0; 
             while (i != 1)
             {
                 Console.WriteLine("Enter Password");
@@ -42,7 +42,7 @@ namespace RegularExpressions
                 }
                 else
                 {
-                    Console.WriteLine("Enter atlest one numeric number");
+                    Console.WriteLine("Enter atlest one special character");
                 }
 
             }
